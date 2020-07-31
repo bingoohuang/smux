@@ -1,6 +1,6 @@
 # smux
 
-forked from https:/github.com/monochromegane/smux.
+forked from [monochromegane/smux](https:/github.com/monochromegane/smux).
 
 smux is a socket multiplexer.
 smux multiplexes one connection with a virtual channel called a stream.
