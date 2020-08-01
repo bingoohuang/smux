@@ -232,7 +232,7 @@ func newHttp2Client() Client {
 // SMUX
 func newSmuxServer() Server {
 	addr := fmt.Sprintf("%s:%d", host, port)
-	//fmt.Println("listening on", addr)
+	// fmt.Println("listening on", addr)
 	s := smux.Server{
 		Network: "tcp",
 		Address: addr,
