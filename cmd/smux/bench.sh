@@ -4,7 +4,7 @@ delay=$1
 cert=$2
 key=$3
 
-go build -o bench cmd/bench/main.go
+go build -o bench cmd/smux/main.go
 
 for proto in http http2 smux yamux ssmux
 do

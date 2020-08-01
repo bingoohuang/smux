@@ -25,16 +25,16 @@ func (s Server) ListenAndServe() error {
 			return err
 		}
 
-		s.dealConn(conn)
+		s.dealConn(&conn)
 	}
 }
 
-func (s Server) dealConn(conn Conn) {
+func (s Server) dealConn(conn *Conn) {
 	go conn.Listen()
 	go s.dealStream(conn)
 }
 
-func (s Server) dealStream(conn Conn) {
+func (s Server) dealStream(conn *Conn) {
 	defer conn.Close()
 
 	for {

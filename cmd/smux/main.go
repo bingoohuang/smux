@@ -17,8 +17,8 @@ import (
 	"time"
 
 	"github.com/bingoohuang/smux"
+	ssmux "github.com/bingoohuang/smux/pkg/xtaci/smux"
 	"github.com/hashicorp/yamux"
-	ssmux "github.com/xtaci/smux"
 	"golang.org/x/net/http2"
 )
 
