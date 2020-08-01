@@ -232,7 +232,7 @@ func newHttp2Client() Client {
 // SMUX
 func newSmuxServer() Server {
 	addr := fmt.Sprintf("%s:%d", host, port)
-	fmt.Println("listening on", addr)
+	//fmt.Println("listening on", addr)
 	s := smux.Server{
 		Network: "tcp",
 		Address: addr,
@@ -289,18 +289,18 @@ func (s YamuxServer) Run() {
 				panic(err)
 			}
 			var wg sync.WaitGroup
-			var buf bytes.Buffer
 			for {
 				stream, err := session.Accept()
 				if err != nil {
 					break
 				}
 				wg.Add(1)
-				buf.Reset()
 
 				go func() {
 					defer wg.Done()
 					defer stream.Close()
+
+					var buf bytes.Buffer
 
 					out := make([]byte, 512)
 					read := 0

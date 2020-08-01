@@ -1,10 +1,13 @@
 #!/bin/sh
 
-delay=$1
-cert=$2
-key=$3
+#delay=$1
+delay=${1-10}
+#cert=$2
+cert=${2-server.pem}
+#key=$3
+key=${3-server.key}
 
-go build -o bench cmd/smux/main.go
+#go build -o bench main.go
 
 for proto in http http2 smux yamux ssmux
 do
